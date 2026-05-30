@@ -1,17 +1,25 @@
 name: mdadash-test
 channels:
   - conda-forge
-  - defaults
 dependencies:
   # Base depends
   - python
   - pip
+
+  # Package depends
+  - fastapi
+  - imdclient
+  - ipykernel
+  - MDAnalysis
+  - python-socketio
+  - uvicorn
 
   # Testing
   - pytest
   - pytest-cov
   - pytest-xdist
   - codecov
+  - httpx
 
   # Pip-only installs
   #- pip:
