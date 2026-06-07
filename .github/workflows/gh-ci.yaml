@@ -79,7 +79,7 @@ jobs:
 
       - name: Upload backend coverage to codecov
         if: github.repository == 'MDAnalysis/mdadash' && github.event_name != 'schedule'
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v7
         with:
           file: coverage.xml
           name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
@@ -100,7 +100,7 @@ jobs:
 
       - name: Upload frontend coverage to codecov
         if: github.repository == 'MDAnalysis/mdadash' && github.event_name != 'schedule'
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v7
         with:
           file: ./coverage/lcov.info
           name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
