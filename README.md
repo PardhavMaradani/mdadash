@@ -41,6 +41,24 @@ or
 uv add mdadash
 ```
 
+or
+
+```sh
+conda install -c conda-forge mdadash
+```
+
+or
+
+```sh
+mamba install -c conda-forge mdadash
+```
+
+To execute directly from an isolated environment without installing:
+
+```sh
+uvx mdadash -h
+```
+
 ### Run
 
 Once the package is installed, it can be run using the `mdadash` command to start the dashboard server:
