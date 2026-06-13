@@ -1,6 +1,19 @@
 import { config } from '@vue/test-utils'
 import { createVuetify } from 'vuetify'
-import { vi } from 'vitest'
+import { beforeEach, vi } from 'vitest'
+
+beforeEach(() => {
+  vi.useFakeTimers({
+    toFake: [
+      'setTimeout',
+      'clearTimeout',
+      'setInterval',
+      'clearInterval',
+      'requestAnimationFrame',
+      'cancelAnimationFrame',
+    ],
+  })
+})
 
 globalThis.ResizeObserver =
   globalThis.ResizeObserver ||
