@@ -29,9 +29,6 @@ The rules for this file:
 
 <!-- New added features -->
 
-- Added support to duplicate widgets (PR #13)
-- Added support for batching and parallelization (PR #15)
-
 ### Fixed
 
 <!-- Bug fixes -->
@@ -47,6 +44,22 @@ The rules for this file:
 ### Removed
 
 <!-- Removed features -->
+
+## [0.0.4]
+
+### Authors
+
+<!-- GitHub usernames of contributors to this release -->
+
+06/28/2026 PardhavMaradani
+
+### Added
+
+<!-- New added features -->
+
+- Added support to duplicate widgets (PR #13)
+- Added support for batching and parallelization (PR #15)
+- Added support for energy trends (PR #16)
 
 ## [0.0.3]
 
