@@ -51,6 +51,14 @@ class BufferedTrajectory:
         self._buffer.append(ts.copy())
         return ts
 
+    def _prepare_for_next(self):
+        """IMDReader during `_read_frame` loads the new frame into the current
+        timestep using `_load_imdframe_into_ts`. This will overwrite the values
+        if current ts is a reference to a buffer item. Hence make a copy to
+        prevent current buffer items from getting overwritten during iteration.
+        """
+        self._trajectory.ts = self._buffer[-1].copy()
+
 
 class CommHandler:
     """Comm Handler
@@ -293,6 +301,7 @@ class UniverseManager:
             #   with support for 'Transmission rate' packet
             # Burn the timesteps until we reach the desired step
             # Don't use next() to avoid unnecessary transformations
+            u.trajectory._prepare_for_next()
             while (u.trajectory._frame + 1) % step != 0:
                 u.trajectory._read_next_timestep()
             u.trajectory.next()
