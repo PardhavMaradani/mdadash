@@ -29,11 +29,6 @@ The rules for this file:
 
 <!-- New added features -->
 
-- Added persistence support (PR #19)
-- Added support for MDA `AnalysisBase`-based classes (PR #21)
-- Optimized plot generation to improve performane and reduce memory (PR #25)
-- Added widgets for Ramachandran and Janin plots (PR #26)
-
 ### Fixed
 
 <!-- Bug fixes -->
@@ -49,6 +44,23 @@ The rules for this file:
 ### Removed
 
 <!-- Removed features -->
+
+## [0.0.5]
+
+### Authors
+
+<!-- GitHub usernames of contributors to this release -->
+
+07/05/2026 PardhavMaradani
+
+### Added
+
+<!-- New added features -->
+
+- Added persistence support (PR #19)
+- Added support for MDA `AnalysisBase`-based classes (PR #21)
+- Optimized plot generation to improve performane and reduce memory (PR #25)
+- Added widgets for Ramachandran and Janin plots (PR #26)
 
 ## [0.0.4]
 
