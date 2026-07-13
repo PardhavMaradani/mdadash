@@ -11,15 +11,15 @@ from typing import TYPE_CHECKING, Any
 from uuid import uuid1
 
 import IPython
-import matplotlib_inline
 import MDAnalysis as mda
 from joblib import Parallel
+from matplotlib_inline.backend_inline import InlineBackend
 
 if TYPE_CHECKING:
     from mdadash.backend.kernel.core import CommHandler
 
 logger = logging.getLogger(__name__)
-matplotlib_inline.backend_inline.set_matplotlib_formats("jpeg")
+InlineBackend.instance().figure_formats = {"jpeg"}
 
 
 class WidgetBase(ABC):
