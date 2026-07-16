@@ -29,6 +29,8 @@ The rules for this file:
 
 <!-- New added features -->
 
+- Added widget for MSD Analysis (PR #35)
+
 ### Fixed
 
 <!-- Bug fixes -->
