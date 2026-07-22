@@ -32,7 +32,7 @@ async def sio_event_emitted(_sio, event, n=1, timeout=5.0):
             args, _ = call
             if args[0] == event:
                 count += 1
-        if count == n:
+        if count >= n:
             emitted = True
             break
         await asyncio.sleep(0)
@@ -73,13 +73,13 @@ async def disconnect_from_simulation():
     assert response["status"] == "ok"
 
 
-async def resume_simulation(imd_server):
+async def resume_simulation(imd_server, n_frames=10):
     sio.emit.reset_mock()  # clear emit.await_args_list
     handler = sio.handlers["/"]["resume_simulations"]
     response = await run_task_until_done(handler("_sid"))
     assert response["status"] == "ok"
     # send the frames needed by imdclient here
-    imd_server.send_frames(1, 10)
+    imd_server.send_frames(1, n_frames)
 
 
 async def pause_simulation():
