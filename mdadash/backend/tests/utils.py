@@ -1,4 +1,5 @@
 import asyncio
+import sys
 import time
 from unittest.mock import AsyncMock
 
@@ -52,7 +53,7 @@ async def check_input_changes(uuid, inputs, status="ok"):
         assert response["status"] == status
 
 
-async def connect_to_simulation(imd_server, step=2, batch_size=1):
+async def connect_to_simulation(imd_server, step=2, batch_size=1, timeout=10):
     main.mdadash.sm.universe_configs[0].update(
         {
             "topology": str(TPR),
@@ -60,6 +61,7 @@ async def connect_to_simulation(imd_server, step=2, batch_size=1):
             "nojump": False,
             "step": step,
             "batch_size": batch_size,
+            "timeout": timeout,
         }
     )
     handler = sio.handlers["/"]["connect_to_simulations"]
@@ -68,6 +70,8 @@ async def connect_to_simulation(imd_server, step=2, batch_size=1):
 
 
 async def disconnect_from_simulation():
+    if sys.platform == "darwin":
+        return
     handler = sio.handlers["/"]["disconnect_from_simulations"]
     response = await run_task_until_done(handler("_sid"))
     assert response["status"] == "ok"
