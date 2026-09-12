@@ -29,12 +29,6 @@ The rules for this file:
 
 <!-- New added features -->
 
-- Added batch support for ACF widget (PR #75)
-- Added reference timestep support (Issue #70, PR #76)
-- Added misc fixes (PR #77)
-- Refactored tests for robustness (PR #78)
-- Added more user facing frontend error handling (PR #80)
-
 ### Fixed
 
 <!-- Bug fixes -->
@@ -50,6 +44,25 @@ The rules for this file:
 ### Removed
 
 <!-- Removed features -->
+
+## [0.1.3]
+
+### Authors
+
+<!-- GitHub usernames of contributors to this release -->
+
+09/12/2026 PardhavMaradani
+
+### Added
+
+<!-- New added features -->
+
+- Added batch support for ACF widget (PR #75)
+- Added reference timestep support (Issue #70, PR #76)
+- Added misc fixes (PR #77)
+- Refactored tests for robustness (PR #78)
+- Added more user facing frontend error handling (PR #80)
+- Updated README with supported features
 
 ## [0.1.2]
 
