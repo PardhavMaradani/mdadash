@@ -164,7 +164,7 @@ const initMolstar = async () => {
       regionState: { left: 'collapsed', right: 'show', top: 'show', bottom: 'hidden' },
     })
     if (plugin.behaviors?.layout?.leftPanelTabName) {
-      plugin.behaviors.layout.leftPanelTabName.next('help')
+      plugin.behaviors.layout.leftPanelTabName.next('none')
     }
     const canvas = molstarTarget.value.querySelector('canvas')
     if (canvas) {
